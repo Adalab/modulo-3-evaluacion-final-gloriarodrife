@@ -5,11 +5,13 @@ import ls from '../services/localStorage';
 import { Link, Route, Routes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 function App() {
-  return (
-    <div className="App">
-      <h1>Hola mundo</h1>
-    </div>
-  );
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    callToApi().then((response) => setData(response));
+  }, []);
+
+  return <div className="App"></div>;
 }
 
 export { App };
