@@ -16,13 +16,17 @@ function App() {
   useEffect(() => {
     callToApi().then((response) => {
       setLoaded(true);
-      const orderedMovies = response.sort((a, b) =>
-        a.movie > b.movie ? 1 : a.movie < b.movie ? -1 : 0
-      );
+      const orderedMovies = sorteAlphabetically(response);
       setData(orderedMovies);
     });
   }, []);
 
+  // Funcion para ordenar la lista
+  const sorteAlphabetically = (list) => {
+    return list.sort((a, b) =>
+      a.movie > b.movie ? 1 : a.movie < b.movie ? -1 : 0
+    );
+  };
   // Recogemos y guardamos el valor del input para filtrar las peliculas
   const handleFilterMovie = (value) => {
     setFilterMovie(value);
