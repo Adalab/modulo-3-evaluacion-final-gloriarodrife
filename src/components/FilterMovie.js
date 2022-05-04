@@ -3,7 +3,7 @@ const FilterMovie = (props) => {
     props.handleFilterMovie(event.target.value);
   };
   return (
-    <section>
+    <section className="filter__movie">
       <label htmlFor="movie">Movie </label>
       <input type="text" id="movie" onChange={handleInput} />
     </section>

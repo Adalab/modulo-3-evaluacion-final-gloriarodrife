@@ -4,8 +4,10 @@ import FilterYear from './FilterYear';
 const Filters = (props) => {
   return (
     <>
-      <FilterMovie handleFilterMovie={props.handleFilterMovie} />
-      <FilterYear data={props.data} years={props.years} />
+      <section className="filters">
+        <FilterMovie handleFilterMovie={props.handleFilterMovie} />
+        <FilterYear data={props.data} years={props.years} />
+      </section>
     </>
   );
 };
