@@ -19,6 +19,17 @@ function App() {
     setFilterMovie(value);
   };
 
+  // Funcion que comprueba si los years se repiten
+  const getYears = () => {
+    const movieYears = data.map((item) => item.year);
+    const dataUniqueYear = new Set(movieYears);
+    let uniqueYear = [...dataUniqueYear];
+
+    // Ordeno el array
+    const arraySorted = uniqueYear.sort();
+    return uniqueYear;
+  };
+
   const scenesFilter = data.filter((scene) =>
     scene.movie.toLowerCase().includes(filterMovie.toLowerCase()) ? true : false
   );
@@ -39,7 +50,7 @@ function App() {
   return (
     <>
       <Header />
-      <Filters handleFilterMovie={handleFilterMovie} />
+      <Filters handleFilterMovie={handleFilterMovie} years={getYears()} />
       <SceneList data={scenesFilter} />
     </>
   );

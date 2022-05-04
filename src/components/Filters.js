@@ -5,7 +5,7 @@ const Filters = (props) => {
   return (
     <>
       <FilterMovie handleFilterMovie={props.handleFilterMovie} />
-      <FilterYear />
+      <FilterYear data={props.data} years={props.years} />
     </>
   );
 };
