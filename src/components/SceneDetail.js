@@ -1,21 +1,20 @@
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MovieDetail = (props) => {
-  const { movie, image, id, phrase, director, audio } = props.movie;
-  console.log(audio);
+  const { movie, image, phrase, director, audio } = props.movie;
   return (
     <>
       {/* Con el Link modifico la ruta  */}
 
       <img src={image} alt={movie} />
 
-      <Link to="/"> Volver</Link>
+      <Link to="/">Return</Link>
 
       <h2>{movie}</h2>
       <p>{phrase}</p>
       <p>Director: {director} </p>
       <a href={audio} target="_blank" rel="noopener noreferrer">
-        Escuchar audio
+        Listen audio
       </a>
     </>
   );

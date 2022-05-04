@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Scene = (props) => {
   const { movie, image, phrase, year, id } = props.item;
+  console.log(props);
   return (
     <>
       <Link to={`/movie/${id}`}>
