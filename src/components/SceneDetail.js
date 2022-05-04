@@ -12,9 +12,7 @@ const MovieDetail = (props) => {
         <h2>{movie}</h2>
         <p>{phrase}</p>
         <p>Director: {director} </p>
-        <a href={audio} target="_blank">
-          Escuchar audio
-        </a>
+        <a href={audio}>Escuchar audio</a>
       </Link>
     </>
   );
