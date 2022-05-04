@@ -1,5 +1,6 @@
 import FilterMovie from './FilterMovie';
 import FilterYear from './FilterYear';
+import Reset from './Reset';
 
 const Filters = (props) => {
   return (
@@ -14,6 +15,7 @@ const Filters = (props) => {
           yearSelected={props.yearSelected}
           years={props.years}
         />
+        <Reset resetButton={props.resetButton} />
       </section>
     </>
   );

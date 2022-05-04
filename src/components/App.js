@@ -37,7 +37,10 @@ function App() {
   const handleFilterYear = (value) => {
     setYearSelected(value);
   };
-
+  const ResetButton = () => {
+    setFilterMovie('');
+    setYearSelected('All');
+  };
   // Filtro segun los parametros del usuario
   const scenesFilter = data
     .filter((scene) =>
@@ -85,6 +88,7 @@ function App() {
                   handleFilterYear={handleFilterYear}
                   filterMovie={filterMovie}
                   yearSelected={yearSelected}
+                  resetButton={ResetButton}
                   years={getYears()}
                 />
                 <SceneList data={arraySorted} />
