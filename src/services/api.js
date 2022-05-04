@@ -7,7 +7,7 @@ const callToApi = async () => {
   const data = await response.json();
 
   // Cuando responde la API podemos limpiar los datos aquí
-  const result = data.map((item) => {
+  const result = data.map((item, index) => {
     return {
       movie: item.movie,
       year: item.year,
@@ -15,6 +15,7 @@ const callToApi = async () => {
       image: item.poster,
       phrase: item.full_line,
       director: item.director,
+      id: index,
     };
   });
 
