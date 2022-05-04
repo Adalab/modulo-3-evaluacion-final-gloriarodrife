@@ -8,6 +8,7 @@ const MovieDetail = (props) => {
       {/* Con el Link modifico la ruta  */}
       <Link to={`/movie/${id}`}>
         <img src={image} alt={movie} />
+        <Link to="/"> Volver</Link>
         <h2>{movie}</h2>
         <p>{phrase}</p>
         <p>Director: {director} </p>

@@ -66,9 +66,7 @@ function App() {
 
   //buscar cual es la peli que quiero mostrar en detalle
   const { pathname } = useLocation(); // Obtengo la ruta de la aplicacion
-
   const dataPath = matchPath('/movie/:id', pathname); //busco si coincide con la ruta dinámica
-
   const movieId = dataPath !== null ? dataPath.params.id : null; //buscando el id del personaje
 
   const movieFound = data.find((movie) => movie.id === parseInt(movieId));
@@ -86,6 +84,7 @@ function App() {
                   handleFilterMovie={handleFilterMovie}
                   handleFilterYear={handleFilterYear}
                   years={getYears()}
+                  filterMovie={filterMovie}
                 />
                 <SceneList data={arraySorted} />
               </>
