@@ -1,10 +1,10 @@
 import FilterMovie from './FilterMovie';
 import FilterYear from './FilterYear';
 
-const Filters = () => {
+const Filters = (props) => {
   return (
     <>
-      <FilterMovie />
+      <FilterMovie handleFilterMovie={props.handleFilterMovie} />
       <FilterYear />
     </>
   );
