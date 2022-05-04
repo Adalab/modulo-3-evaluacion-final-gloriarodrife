@@ -32,7 +32,6 @@ function App() {
   };
 
   // Recogemos y guardamos el valor del select
-
   const handleFilterYear = (value) => {
     setYearSelected(value);
   };
@@ -45,8 +44,6 @@ function App() {
         : false
     )
     .filter((scene) => {
-      console.log(scene);
-      console.log(yearSelected);
       return yearSelected === 'All'
         ? true
         : scene.year === parseInt(yearSelected);
