@@ -11,6 +11,7 @@ const Filters = (props) => {
         />
         <FilterYear
           handleFilterYear={props.handleFilterYear}
+          yearSelected={props.yearSelected}
           years={props.years}
         />
       </section>

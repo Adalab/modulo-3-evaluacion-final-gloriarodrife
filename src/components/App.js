@@ -83,8 +83,9 @@ function App() {
                 <Filters
                   handleFilterMovie={handleFilterMovie}
                   handleFilterYear={handleFilterYear}
-                  years={getYears()}
                   filterMovie={filterMovie}
+                  yearSelected={yearSelected}
+                  years={getYears()}
                 />
                 <SceneList data={arraySorted} />
               </>
