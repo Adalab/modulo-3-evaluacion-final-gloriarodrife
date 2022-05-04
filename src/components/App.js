@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 import { callToApi } from '../services/api';
 import ls from '../services/localStorage';
 import { Link, Route, Routes } from 'react-router-dom';
+import { matchPath, useLocation } from 'react-router';
 import PropTypes from 'prop-types';
 import Header from './Header';
 import Filters from './Filters';
 import SceneList from './SceneList';
+import MovieDetail from './SceneDetail';
 function App() {
   const [data, setData] = useState([]);
   const [filterMovie, setFilterMovie] = useState('');
@@ -62,15 +64,40 @@ function App() {
     return 0;
   });
 
+  //buscar cual es la peli que quiero mostrar en detalle
+  const { pathname } = useLocation(); // Obtengo la ruta de la aplicacion
+
+  const dataPath = matchPath('/movie/:id', pathname); //busco si coincide con la ruta dinámica
+
+  const movieId = dataPath !== null ? dataPath.params.id : null; //buscando el id del personaje
+
+  const movieFound = data.find((movie) => movie.id === parseInt(movieId));
   return (
     <>
       <Header />
-      <Filters
-        handleFilterMovie={handleFilterMovie}
-        handleFilterYear={handleFilterYear}
-        years={getYears()}
-      />
-      <SceneList data={arraySorted} />
+
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters
+                  handleFilterMovie={handleFilterMovie}
+                  handleFilterYear={handleFilterYear}
+                  years={getYears()}
+                />
+                <SceneList data={arraySorted} />
+              </>
+            }
+          />
+
+          <Route
+            path="/movie/:id"
+            element={<MovieDetail movie={movieFound} />}
+          />
+        </Routes>
+      </main>
     </>
   );
 }
