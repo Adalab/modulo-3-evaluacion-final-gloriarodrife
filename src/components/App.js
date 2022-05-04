@@ -16,7 +16,10 @@ function App() {
   useEffect(() => {
     callToApi().then((response) => {
       setLoaded(true);
-      setData(response);
+      const orderedMovies = response.sort((a, b) =>
+        a.movie > b.movie ? 1 : a.movie < b.movie ? -1 : 0
+      );
+      setData(orderedMovies);
     });
   }, []);
 
@@ -57,19 +60,6 @@ function App() {
         : scene.year === parseInt(yearSelected);
     });
 
-  // Ordeno el array
-  const arraySorted = scenesFilter.sort((a, b) => {
-    const movieA = a.movie.toUpperCase();
-    const movieB = b.movie.toUpperCase();
-    if (movieA < movieB) {
-      return -1;
-    }
-    if (movieA > movieB) {
-      return 1;
-    }
-    return 0;
-  });
-
   //buscar cual es la peli que quiero mostrar en detalle
   const { pathname } = useLocation(); // Obtengo la ruta de la aplicacion
   const dataPath = matchPath('/scene/:id', pathname); //busco si coincide con la ruta dinámica
@@ -93,7 +83,7 @@ function App() {
                   resetButton={ResetButton}
                   years={getYears()}
                 />
-                <SceneList loaded={loaded} data={arraySorted} />
+                <SceneList loaded={loaded} data={scenesFilter} />
               </>
             }
           />
