@@ -6,7 +6,10 @@ const Filters = (props) => {
     <>
       <section className="filters">
         <FilterMovie handleFilterMovie={props.handleFilterMovie} />
-        <FilterYear data={props.data} years={props.years} />
+        <FilterYear
+          handleFilterYear={props.handleFilterYear}
+          years={props.years}
+        />
       </section>
     </>
   );

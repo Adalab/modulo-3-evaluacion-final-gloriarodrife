@@ -10,6 +10,7 @@ import SceneList from './SceneList';
 function App() {
   const [data, setData] = useState([]);
   const [filterMovie, setFilterMovie] = useState('');
+  const [yearSelected, setYearSelected] = useState('All');
   useEffect(() => {
     callToApi().then((response) => setData(response));
   }, []);
@@ -27,12 +28,29 @@ function App() {
 
     // Ordeno el array
     const arraySorted = uniqueYear.sort();
-    return uniqueYear;
+    return arraySorted;
   };
 
-  const scenesFilter = data.filter((scene) =>
-    scene.movie.toLowerCase().includes(filterMovie.toLowerCase()) ? true : false
-  );
+  // Recogemos y guardamos el valor del select
+
+  const handleFilterYear = (value) => {
+    setYearSelected(value);
+  };
+
+  // Filtro segun los parametros del usuario
+  const scenesFilter = data
+    .filter((scene) =>
+      scene.movie.toLowerCase().includes(filterMovie.toLowerCase())
+        ? true
+        : false
+    )
+    .filter((scene) => {
+      console.log(scene);
+      console.log(yearSelected);
+      return yearSelected === 'All'
+        ? true
+        : scene.year === parseInt(yearSelected);
+    });
 
   // Ordeno el array
   const arraySorted = scenesFilter.sort((a, b) => {
@@ -50,8 +68,12 @@ function App() {
   return (
     <>
       <Header />
-      <Filters handleFilterMovie={handleFilterMovie} years={getYears()} />
-      <SceneList data={scenesFilter} />
+      <Filters
+        handleFilterMovie={handleFilterMovie}
+        handleFilterYear={handleFilterYear}
+        years={getYears()}
+      />
+      <SceneList data={arraySorted} />
     </>
   );
 }
