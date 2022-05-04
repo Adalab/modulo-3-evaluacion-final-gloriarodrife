@@ -21,7 +21,7 @@ const FilterYear = (props) => {
   return (
     <>
       <section className="filter__year">
-        <label>Year</label>
+        <label htmlFor="year">Year</label>
         <ul>{renderYears()}</ul>
       </section>
     </>

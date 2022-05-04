@@ -5,7 +5,7 @@ import Reset from './Reset';
 const Filters = (props) => {
   return (
     <>
-      <section className="filters">
+      <form className="filters">
         <FilterMovie
           handleFilterMovie={props.handleFilterMovie}
           filterMovie={props.filterMovie}
@@ -16,7 +16,7 @@ const Filters = (props) => {
           years={props.years}
         />
         <Reset resetButton={props.resetButton} />
-      </section>
+      </form>
     </>
   );
 };
