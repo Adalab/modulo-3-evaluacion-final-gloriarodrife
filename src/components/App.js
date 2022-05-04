@@ -2,19 +2,23 @@ import '../styles/App.scss';
 import { useEffect, useState } from 'react';
 import { callToApi } from '../services/api';
 import ls from '../services/localStorage';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
-import PropTypes from 'prop-types';
 import Header from './Header';
 import Filters from './Filters';
 import SceneList from './SceneList';
-import MovieDetail from './SceneDetail';
+import SceneDetail from './SceneDetail';
 function App() {
   const [data, setData] = useState([]);
   const [filterMovie, setFilterMovie] = useState('');
   const [yearSelected, setYearSelected] = useState('All');
+  const [loaded, setLoaded] = useState(false);
+
   useEffect(() => {
-    callToApi().then((response) => setData(response));
+    callToApi().then((response) => {
+      setLoaded(true);
+      setData(response);
+    });
   }, []);
 
   // Recogemos y guardamos el valor del input para filtrar las peliculas
@@ -69,9 +73,9 @@ function App() {
 
   //buscar cual es la peli que quiero mostrar en detalle
   const { pathname } = useLocation(); // Obtengo la ruta de la aplicacion
-  const dataPath = matchPath('/movie/:id', pathname); //busco si coincide con la ruta dinámica
+  const dataPath = matchPath('/scene/:id', pathname); //busco si coincide con la ruta dinámica
   const movieId = dataPath !== null ? dataPath.params.id : null; //buscando el id del personaje
-  const movieFound = data.find((movie) => movie.id === parseInt(movieId));
+  const movieFound = data.find((movie) => movie.id === movieId);
   return (
     <>
       <Header />
@@ -90,14 +94,14 @@ function App() {
                   resetButton={ResetButton}
                   years={getYears()}
                 />
-                <SceneList data={arraySorted} />
+                <SceneList loaded={loaded} data={arraySorted} />
               </>
             }
           />
 
           <Route
-            path="/movie/:id"
-            element={<MovieDetail movie={movieFound} />}
+            path="/scene/:id"
+            element={<SceneDetail loaded={loaded} movie={movieFound} />}
           />
         </Routes>
       </main>

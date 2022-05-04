@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
 
-const MovieDetail = (props) => {
-  if (!props.movie) {
+const SceneDetail = (props) => {
+  if (!props.loaded) {
+    return <p>Loading...</p>;
+  }
+
+  if (props.loaded && !props.movie) {
     return <p>The scene you are looking for does not exist</p>;
   }
 
   const { movie, image, phrase, director, audio } = props.movie;
   return (
     <>
-      {/* Con el Link modifico la ruta  */}
-
       <img src={image} alt={movie} />
-
       <Link to="/">Return</Link>
-
       <h2>{movie}</h2>
       <p>{phrase}</p>
       <p>Director: {director} </p>
@@ -24,4 +24,4 @@ const MovieDetail = (props) => {
   );
 };
 
-export default MovieDetail;
+export default SceneDetail;
