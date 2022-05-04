@@ -5,6 +5,7 @@ import ls from '../services/localStorage';
 import { Link, Route, Routes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from './Header';
+import Filters from './Filters';
 function App() {
   const [data, setData] = useState([]);
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <Header />
+      <Filters />
     </>
   );
 }
