@@ -1,7 +1,6 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
 import { callToApi } from '../services/api';
-import ls from '../services/localStorage';
 import { Route, Routes } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
 import Header from './Header';
