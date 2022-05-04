@@ -4,6 +4,7 @@ import { callToApi } from '../services/api';
 import ls from '../services/localStorage';
 import { Link, Route, Routes } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Header from './Header';
 function App() {
   const [data, setData] = useState([]);
 
@@ -11,7 +12,11 @@ function App() {
     callToApi().then((response) => setData(response));
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export { App };
