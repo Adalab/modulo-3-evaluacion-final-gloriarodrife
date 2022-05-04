@@ -35,8 +35,7 @@ function App() {
     }
     return 0;
   });
-  console.log(arraySorted);
-  console.log(scenesFilter);
+
   return (
     <>
       <Header />
