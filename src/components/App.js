@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { callToApi } from '../services/api';
 import { Route, Routes } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
+import ls from '../services/localStorage';
 import Header from './Header';
 import Filters from './Filters';
 import SceneList from './SceneList';
@@ -17,6 +18,7 @@ function App() {
     callToApi().then((response) => {
       setLoaded(true);
       const orderedMovies = sorteAlphabetically(response, 'movie');
+      // Añado las peliculas al localStorage
       setData(orderedMovies);
     });
   }, []);

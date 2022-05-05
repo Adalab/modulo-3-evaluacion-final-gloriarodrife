@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import ls from '../services/localStorage';
 const SceneDetail = (props) => {
+  ls.set('scenes', props.movie);
+
+  // ls.get('scene', defaultScene)
   if (!props.loaded) {
     return <p>Loading...</p>;
   }
@@ -26,13 +30,6 @@ const SceneDetail = (props) => {
 
 SceneDetail.defaultProps = {
   target: '_blank',
-  movie: {
-    id: 'Not defined',
-    movie: 'Not defined',
-    phrase: 'Not defined',
-    director: 'Not defined',
-    image: 'Not defined',
-  },
 };
 SceneDetail.propTypes = {
   movie: PropTypes.object,
