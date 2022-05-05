@@ -13,14 +13,20 @@ const SceneDetail = (props) => {
   const { movie, image, phrase, director, audio } = props.movie;
   return (
     <>
-      <img src={image} alt={movie} />
-      <Link to="/">Return</Link>
-      <h2>{movie}</h2>
-      <p>{phrase}</p>
-      <p>Director: {director} </p>
-      <a href={audio} target={props.target} rel="noopener noreferrer">
-        Listen audio
-      </a>
+      <section className="detail">
+        <div>
+          <img className="detail__img" src={image} alt={movie} />
+        </div>
+        <div>
+          <Link to="/">Return</Link>
+          <h2 className="detail__title">{movie}</h2>
+          <p className="detail__text">{phrase}</p>
+          <p className="detail__text">Director: {director} </p>
+          <a href={audio} target={props.target} rel="noopener noreferrer">
+            Listen audio
+          </a>
+        </div>
+      </section>
     </>
   );
 };
