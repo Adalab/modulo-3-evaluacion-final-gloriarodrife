@@ -1,22 +1,30 @@
 .detail {
-  display: block;
   width: 400px;
-  height: 400px;
+  height: 350px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-items: center;
   gap: 20px;
-
+  cursor: pointer;
+  border: 0.4px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: var(--primary);
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   &__img {
     width: 200px;
     height: 200px;
+    border-radius: 4px;
   }
 }
 
 .main {
   width: 100vw;
   height: 100vh;
-  .detail {
-  }
 }
