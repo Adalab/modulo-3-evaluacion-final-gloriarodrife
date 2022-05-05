@@ -25,7 +25,7 @@ function App() {
     } else {
       setLoaded(true);
     }
-  }, []);
+  }, [data.length]);
 
   useEffect(() => {
     ls.set('movies', data);

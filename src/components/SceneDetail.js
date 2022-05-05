@@ -35,6 +35,7 @@ SceneDetail.defaultProps = {
   target: '_blank',
 };
 SceneDetail.propTypes = {
+  target: PropTypes.string,
   movie: PropTypes.object,
 };
 export default SceneDetail;

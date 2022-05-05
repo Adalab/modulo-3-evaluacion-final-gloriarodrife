@@ -1,19 +1,23 @@
 .card {
   width: 250px;
-  height: 300px;
+  height: 320px;
   cursor: pointer;
   text-align: center;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
   border: 0.4px solid rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 12px;
   transition: all 200ms ease-in;
   background-color: var(--primary--ligth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
   &:hover {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1),
       4px 4px 16px rgba(123, 213, 213, 0.5);
   }
+
   &__img {
     width: 200px;
     height: 200px;
@@ -21,8 +25,8 @@
 
     @media all and (min-width: 680px) {
       flex-direction: row;
-      width: 230px;
-      height: 230px;
+      width: 190px;
+      height: 190px;
     }
   }
 
@@ -40,12 +44,18 @@
       height: 40px;
       width: 100%;
     }
+    @media all and (min-width: 680px) {
+      font-size: 1.4rem;
+    }
   }
 
   &__text {
     font-size: 0.9rem;
     color: var(--color-title);
-    font-weight: bold;
     font-family: sans-serif;
+
+    @media all and (min-width: 680px) {
+      font-size: 1.1rem;
+    }
   }
 }
