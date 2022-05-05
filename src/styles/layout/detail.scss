@@ -70,21 +70,34 @@
     color: rgb(26, 29, 28);
     text-decoration: none;
     font-size: 1rem;
+    display: flex;
+    gap: 3px;
 
     &:hover {
       text-decoration: underline;
     }
   }
+
+  &__video {
+    color: var(--color-title);
+    display: flex;
+    gap: 3px;
+    text-decoration: none;
+  }
 }
 
 @keyframes bounce {
   0% {
-    transform: translate(-5px, 0px);
+    transform: translate(-3px, 0px);
   }
   50% {
-    transform: translate(10px, 0);
+    transform: translate(8px, 0);
   }
   100% {
-    transform: translate(-5px, 0);
+    transform: translate(-3px, 0);
   }
+}
+
+.audio {
+  color: var(--color-title);
 }

@@ -9,7 +9,6 @@ const SceneDetail = (props) => {
   if (props.loaded && !props.movie) {
     return <p>The scene you are looking for does not exist</p>;
   }
-
   const { movie, image, phrase, director, audio, video } = props.movie;
   return (
     <>
@@ -28,15 +27,32 @@ const SceneDetail = (props) => {
             rel="noopener noreferrer"
           >
             Listen audio
+            <div>
+              <i className="audio fa-solid fa-volume-high"></i>
+            </div>
           </a>
           <Link className="detail__return" to="/">
-            <i class="fa-solid fa-arrow-left-long"></i>
+            <div>
+              <i className="video fa-solid fa-arrow-left-long"></i>
+            </div>
           </Link>
 
-          <a target={props.target} href={video[0]}>
+          <a
+            className="detail__video"
+            target={props.target}
+            href={
+              video['360p'] || video['480p'] || video['7200p'] || video['1080p']
+            }
+          >
+            {' Scene'}
+
             <i className="fa-solid fa-video"></i>
           </a>
         </div>
+        <audio controls autoPlay>
+          <source src={audio} type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
       </section>
     </>
   );
