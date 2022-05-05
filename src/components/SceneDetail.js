@@ -13,8 +13,12 @@ const SceneDetail = (props) => {
   return (
     <>
       <section className="detail">
-        <div>
+        <div className="detail__visual">
           <img className="detail__img" src={image} alt={movie} />
+          <audio className="play" controls>
+            <source src={audio} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
         </div>
         <div className="detail__description">
           <h2 className="detail__title">{movie}</h2>
@@ -49,10 +53,6 @@ const SceneDetail = (props) => {
             <i className="fa-solid fa-video"></i>
           </a>
         </div>
-        <audio controls autoPlay>
-          <source src={audio} type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
       </section>
     </>
   );
