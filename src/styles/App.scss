@@ -1,25 +1,10 @@
+@import '../styles/core/reset.scss';
+@import '../styles/core/variables';
+// @import '../styles/layout/header';
 img {
   height: 200px;
   width: 200px;
 }
 ul {
   list-style: none;
-}
-
-.filters {
-  display: flex;
-  gap: 5px;
-}
-
-.filter {
-  &__movie {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  &__year {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
 }

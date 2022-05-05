@@ -7,7 +7,12 @@ const FilterYear = (props) => {
 
   const renderYears = () => {
     return (
-      <select name="year" value={props.yearSelected} onChange={handleChange}>
+      <select
+        className="year__select select"
+        name="year"
+        value={props.yearSelected}
+        onChange={handleChange}
+      >
         <option value="All">All</option>
         {props.years.map((year, index) => (
           <option key={index} value={year}>

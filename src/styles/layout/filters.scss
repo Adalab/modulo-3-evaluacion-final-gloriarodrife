@@ -1,0 +1,61 @@
+.filters {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  justify-content: center;
+}
+
+.filter {
+  &__movie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__year {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__button {
+    background-color: var(--secondary);
+    height: 25px;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--secondary--ligth);
+    }
+  }
+}
+
+.movie {
+  &__search {
+    border-radius: 4px;
+    height: 21px;
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    background-color: var(--primary);
+    &--icon {
+      position: relative;
+      right: 20px;
+    }
+  }
+}
+
+.year {
+  &__select {
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    width: 80px;
+    height: 25px;
+    padding: 2px;
+    text-align: right;
+    background-color: var(--primary);
+  }
+}
+@media all and (min-width: 768px) {
+  .filters {
+    gap: 20px;
+  }
+}

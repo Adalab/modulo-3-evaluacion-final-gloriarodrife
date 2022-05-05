@@ -6,14 +6,18 @@ const FilterMovie = (props) => {
   };
   return (
     <section className="filter__movie">
-      <label htmlFor="movie">{props.text}</label>
+      <label htmlFor="movie" className="movie__text">
+        {props.text}
+      </label>
       <input
+        className="movie__search"
         type={props.inputType}
         id="movie"
         name="movie"
         value={props.filterMovie}
         onChange={handleInput}
       />
+      <i className="fa-solid fa-magnifying-glass movie__search--icon"></i>
     </section>
   );
 };

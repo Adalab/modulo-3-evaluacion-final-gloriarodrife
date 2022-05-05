@@ -4,7 +4,11 @@ const Reset = (props) => {
   const handleClick = (event) => {
     props.resetButton(event);
   };
-  return <button onClick={handleClick}>{props.buttonText}</button>;
+  return (
+    <button className="filter__button" onClick={handleClick}>
+      {props.buttonText}
+    </button>
+  );
 };
 
 Reset.defaultProps = {

@@ -2,6 +2,7 @@ import FilterMovie from './FilterMovie';
 import FilterYear from './FilterYear';
 import Reset from './Reset';
 import PropTypes from 'prop-types';
+import '../styles/layout/filters.scss';
 
 const Filters = (props) => {
   return (
