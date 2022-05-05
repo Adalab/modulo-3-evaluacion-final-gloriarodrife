@@ -72,11 +72,6 @@
     background-color: var(--primary);
     color: var(--color-title);
   }
-
-  &__option {
-    background-color: var(--primary);
-    color: var(--color-title);
-  }
 }
 @media all and (min-width: 768px) {
   .filters {

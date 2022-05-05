@@ -13,11 +13,9 @@ const FilterYear = (props) => {
         value={props.yearSelected}
         onChange={handleChange}
       >
-        <option className="year__option" value="All">
-          All
-        </option>
+        <option value="All">All</option>
         {props.years.map((year, index) => (
-          <option className="year__option" key={index} value={year}>
+          <option key={index} value={year}>
             {year}
           </option>
         ))}
