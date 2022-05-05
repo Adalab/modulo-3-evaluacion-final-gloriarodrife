@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import '../styles/layout/header.scss';
 const Header = (props) => {
   return (
     <>
-      <div>
-        <h1> {props.title}</h1>
-      </div>
+      <header className="header">
+        <h1 className="header__title"> {props.title}</h1>
+      </header>
     </>
   );
 };
