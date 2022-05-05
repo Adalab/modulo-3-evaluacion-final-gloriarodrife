@@ -1,4 +1,5 @@
 import Scene from './Scene';
+import PropTypes from 'prop-types';
 
 const SceneList = (props) => {
   if (!props.loaded) {
@@ -22,4 +23,8 @@ const SceneList = (props) => {
   );
 };
 
+SceneList.propTypes = {
+  data: PropTypes.array,
+  loaded: PropTypes.bool,
+};
 export default SceneList;

@@ -28,9 +28,9 @@ Scene.defaultProps = {
 };
 Scene.propTypes = {
   item: PropTypes.object,
-  movie: PropTypes.string.isRequired,
-  phrase: PropTypes.string.isRequired,
-  year: PropTypes.number.isRequired,
-  id: PropTypes.any.isRequired,
+  movie: PropTypes.string,
+  phrase: PropTypes.string,
+  year: PropTypes.number,
+  id: PropTypes.any,
 };
 export default Scene;

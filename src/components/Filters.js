@@ -1,6 +1,7 @@
 import FilterMovie from './FilterMovie';
 import FilterYear from './FilterYear';
 import Reset from './Reset';
+import PropTypes from 'prop-types';
 
 const Filters = (props) => {
   return (
@@ -20,5 +21,12 @@ const Filters = (props) => {
     </>
   );
 };
-
+Filters.propTypes = {
+  years: PropTypes.array,
+  handleFilterMovie: PropTypes.func,
+  handleFilterYear: PropTypes.func,
+  resetButton: PropTypes.func,
+  yearSelected: PropTypes.string,
+  filterMovie: PropTypes.string,
+};
 export default Filters;
