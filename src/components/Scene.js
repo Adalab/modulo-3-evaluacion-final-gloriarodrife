@@ -27,6 +27,6 @@ Scene.defaultProps = {
   },
 };
 Scene.propTypes = {
-  movie: PropTypes.object,
+  item: PropTypes.object,
 };
 export default Scene;
