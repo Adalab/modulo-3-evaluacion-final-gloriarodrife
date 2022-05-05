@@ -1,5 +1,5 @@
 // import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 const Header = (props) => {
   return (
     <>
@@ -8,5 +8,8 @@ const Header = (props) => {
       </div>
     </>
   );
+};
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 export default Header;
