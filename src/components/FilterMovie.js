@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
-
+const handleKey = (event) => {
+  event.key === 'Enter' && event.preventDefault();
+};
 const FilterMovie = (props) => {
   const handleInput = (event) => {
     props.handleFilterMovie(event.currentTarget.value);
@@ -15,6 +17,7 @@ const FilterMovie = (props) => {
         id="movie"
         name="movie"
         value={props.filterMovie}
+        onKeyDown={handleKey}
         onChange={handleInput}
       />
       <i className="fa-solid fa-magnifying-glass movie__search--icon"></i>
