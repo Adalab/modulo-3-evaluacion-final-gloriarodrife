@@ -1,5 +1,5 @@
 .detail {
-  width: 400px;
+  width: 420px;
   height: 350px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -22,9 +22,69 @@
     height: 200px;
     border-radius: 4px;
   }
+
+  &__return {
+    color: rgb(54, 101, 88);
+    font-size: 1rem;
+    position: absolute;
+    bottom: 10px;
+    right: 35px;
+    animation-name: bounce;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+  }
+  &__title {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    color: var(--color-text);
+
+    @media all and (min-width: 1200px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__text {
+    font-size: 1rem;
+    color: var(--color-text);
+
+    font-family: sans-serif;
+    &--director {
+      color: var(--color-title);
+      font-size: 1.1rem;
+    }
+    @media all and (min-width: 680px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__audio {
+    color: rgb(26, 29, 28);
+    text-decoration: none;
+    font-size: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-.main {
-  width: 100vw;
-  height: 100vh;
+@keyframes bounce {
+  0% {
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+  100% {
+    transform: translate(-5px, 0);
+  }
 }

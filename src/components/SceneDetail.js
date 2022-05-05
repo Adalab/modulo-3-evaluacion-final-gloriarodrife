@@ -17,14 +17,21 @@ const SceneDetail = (props) => {
         <div>
           <img className="detail__img" src={image} alt={movie} />
         </div>
-        <div>
-          <Link to="/">Return</Link>
+        <div className="detail__description">
           <h2 className="detail__title">{movie}</h2>
           <p className="detail__text">{phrase}</p>
-          <p className="detail__text">Director: {director} </p>
-          <a href={audio} target={props.target} rel="noopener noreferrer">
+          <p className="detail__text--director">Director: {director} </p>
+          <a
+            className="detail__audio"
+            href={audio}
+            target={props.target}
+            rel="noopener noreferrer"
+          >
             Listen audio
           </a>
+          <Link className="detail__return" to="/">
+            <i class="fa-solid fa-arrow-left-long"></i>
+          </Link>
         </div>
       </section>
     </>
