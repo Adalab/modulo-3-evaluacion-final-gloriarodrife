@@ -1,0 +1,20 @@
+// .list_container {
+//   flex-grow: 1;
+//   height: 100vh;
+//   overflow-x: auto;
+// }
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+
+  @media all and (min-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media all and (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,10 +1,4 @@
 @import '../styles/core/reset.scss';
 @import '../styles/core/variables';
-// @import '../styles/layout/header';
-img {
-  height: 200px;
-  width: 200px;
-}
-ul {
-  list-style: none;
-}
+@import '../styles/layout/main.scss';
+@import '../styles/layout/card.scss';

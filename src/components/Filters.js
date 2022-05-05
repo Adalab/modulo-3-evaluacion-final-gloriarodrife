@@ -5,9 +5,13 @@ import PropTypes from 'prop-types';
 import '../styles/layout/filters.scss';
 
 const Filters = (props) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <>
-      <form className="filters">
+      <form onSubmit={handleSubmit} className="filters">
         <FilterMovie
           handleFilterMovie={props.handleFilterMovie}
           filterMovie={props.filterMovie}

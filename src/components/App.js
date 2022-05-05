@@ -82,7 +82,7 @@ function App() {
     <>
       <Header />
 
-      <main>
+      <main className="list__container">
         <Routes>
           <Route
             path="/"

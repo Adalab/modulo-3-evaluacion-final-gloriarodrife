@@ -12,9 +12,9 @@ const SceneList = (props) => {
 
   return (
     <section>
-      <ul>
+      <ul className="list">
         {props.data.map((item, index) => (
-          <li key={index}>
+          <li className="card" key={index}>
             <Scene item={item} />
           </li>
         ))}

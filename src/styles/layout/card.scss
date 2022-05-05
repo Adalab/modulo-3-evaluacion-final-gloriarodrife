@@ -1,0 +1,50 @@
+.card {
+  width: 250px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border: 0.4px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  transition: all 200ms ease-in;
+  background-color: var(--primary--ligth);
+
+  &:hover {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1),
+      4px 4px 16px rgba(123, 213, 213, 0.5);
+  }
+  &__img {
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+
+    @media all and (min-width: 680px) {
+      flex-direction: row;
+      width: 230px;
+      height: 230px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    height: 40px;
+    font-size: 1.4rem;
+    color: var(--color-text);
+
+    @media all and (min-width: 680px) {
+      height: 30px;
+      width: 100%;
+    }
+  }
+
+  &__text {
+    font-size: 1rem;
+    color: var(--color-title);
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+}

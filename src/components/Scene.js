@@ -6,12 +6,12 @@ const Scene = (props) => {
 
   return (
     <>
-      <Link to={`/scene/${id}`}>
-        <img src={image} alt={`Scene of ${movie}`} />
-        <h2>
+      <Link to={`/scene/${id}`} style={{ textDecoration: 'none' }}>
+        <img className="card__img" src={image} alt={`Scene of ${movie}`} />
+        <h2 className="card__title">
           {movie} - {year}
         </h2>
-        <p>{phrase}</p>
+        <p className="card__text">' {phrase} '</p>
       </Link>
     </>
   );
