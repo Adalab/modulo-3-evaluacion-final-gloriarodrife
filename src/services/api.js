@@ -15,10 +15,11 @@ const callToApi = async () => {
       image: item.poster,
       phrase: item.full_line,
       director: item.director,
+      video: item.video,
       id: `${item.movie.replace(' ', '-')}--${item.timestamp}`,
     };
   });
-
+  console.log(result);
   return result;
 };
 export { callToApi };

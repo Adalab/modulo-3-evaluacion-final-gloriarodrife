@@ -10,7 +10,7 @@ const SceneDetail = (props) => {
     return <p>The scene you are looking for does not exist</p>;
   }
 
-  const { movie, image, phrase, director, audio } = props.movie;
+  const { movie, image, phrase, director, audio, video } = props.movie;
   return (
     <>
       <section className="detail">
@@ -32,6 +32,10 @@ const SceneDetail = (props) => {
           <Link className="detail__return" to="/">
             <i class="fa-solid fa-arrow-left-long"></i>
           </Link>
+
+          <a target={props.target} href={video[0]}>
+            <i className="fa-solid fa-video"></i>
+          </a>
         </div>
       </section>
     </>
