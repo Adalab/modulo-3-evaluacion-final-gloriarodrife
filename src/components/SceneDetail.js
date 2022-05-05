@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 const SceneDetail = (props) => {
   if (!props.loaded) {
     return <p>Loading...</p>;
@@ -17,11 +17,24 @@ const SceneDetail = (props) => {
       <h2>{movie}</h2>
       <p>{phrase}</p>
       <p>Director: {director} </p>
-      <a href={audio} target="_blank" rel="noopener noreferrer">
+      <a href={audio} target={props.target} rel="noopener noreferrer">
         Listen audio
       </a>
     </>
   );
 };
 
+SceneDetail.defaultProps = {
+  target: '_blank',
+  movie: {
+    id: 'Not defined',
+    name: 'Not defined',
+    phrase: 'Not defined',
+    director: 'Not defined',
+    image: 'Not defined',
+  },
+};
+SceneDetail.propTypes = {
+  movie: PropTypes.object,
+};
 export default SceneDetail;
