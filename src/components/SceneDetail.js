@@ -16,7 +16,7 @@ const SceneDetail = (props) => {
         <div className="detail__visual">
           <img className="detail__img" src={image} alt={movie} />
           <audio className="play" controls>
-            <source src={audio} type="audio/mpeg" />
+            <source src={audio} type={props.type} />
             Your browser does not support the audio element.
           </audio>
         </div>
@@ -60,6 +60,7 @@ const SceneDetail = (props) => {
 
 SceneDetail.defaultProps = {
   target: '_blank',
+  type: 'audio/mpeg',
 };
 SceneDetail.propTypes = {
   target: PropTypes.string,
