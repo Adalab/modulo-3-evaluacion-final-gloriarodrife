@@ -28,7 +28,7 @@ SceneDetail.defaultProps = {
   target: '_blank',
   movie: {
     id: 'Not defined',
-    name: 'Not defined',
+    movie: 'Not defined',
     phrase: 'Not defined',
     director: 'Not defined',
     image: 'Not defined',
