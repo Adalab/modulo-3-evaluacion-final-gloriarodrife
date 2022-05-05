@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ls from '../services/localStorage';
-const SceneDetail = (props) => {
-  ls.set('scenes', props.movie);
 
-  // ls.get('scene', defaultScene)
+const SceneDetail = (props) => {
   if (!props.loaded) {
     return <p>Loading...</p>;
   }

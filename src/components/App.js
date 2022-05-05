@@ -9,20 +9,27 @@ import Filters from './Filters';
 import SceneList from './SceneList';
 import SceneDetail from './SceneDetail';
 function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(ls.get('movies', []));
   const [filterMovie, setFilterMovie] = useState('');
   const [yearSelected, setYearSelected] = useState('All');
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    callToApi().then((response) => {
+    if (data.length === 0) {
+      callToApi().then((response) => {
+        setLoaded(true);
+        const orderedMovies = sorteAlphabetically(response, 'movie');
+        // Añado las peliculas al localStorage
+        setData(orderedMovies);
+      });
+    } else {
       setLoaded(true);
-      const orderedMovies = sorteAlphabetically(response, 'movie');
-      // Añado las peliculas al localStorage
-      setData(orderedMovies);
-    });
+    }
   }, []);
 
+  useEffect(() => {
+    ls.set('movies', data);
+  }, [data]);
   // Funcion para ordenar la lista
   const sorteAlphabetically = (list, key) => {
     return list.sort((a, b) =>

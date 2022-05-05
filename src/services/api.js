@@ -15,7 +15,7 @@ const callToApi = async () => {
       image: item.poster,
       phrase: item.full_line,
       director: item.director,
-      id: `${item.movie}--${item.timestamp}`,
+      id: `${item.movie.replace(' ', '-')}--${item.timestamp}`,
     };
   });
 
