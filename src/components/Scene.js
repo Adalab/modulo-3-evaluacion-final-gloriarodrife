@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Scene = (props) => {
   const { movie, image, phrase, year, id } = props.item;
@@ -16,4 +17,16 @@ const Scene = (props) => {
   );
 };
 
+Scene.defaultProps = {
+  item: {
+    id: 'Not defined',
+    movie: 'Not defined',
+    phrase: 'Not defined',
+    image: 'Not defined',
+    year: 'Not defined',
+  },
+};
+Scene.propTypes = {
+  movie: PropTypes.object,
+};
 export default Scene;
