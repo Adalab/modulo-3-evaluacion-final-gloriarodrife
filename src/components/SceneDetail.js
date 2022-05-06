@@ -35,18 +35,19 @@ const SceneDetail = (props) => {
       <section className="detail">
         <div className="detail__visual">
           <img className="detail__img" src={image} alt={movie} />
-          <audio className="play" controls>
-            <source src={audio} type={props.type} />
-            Your browser does not support the audio element.
-          </audio>
         </div>
         <div className="detail__description">
           <h2 className="detail__title">{movie}</h2>
           <p className="detail__text">{phrase}</p>
           <p className="detail__text--director">Director: {director} </p>
 
+          <audio className="play" controls>
+            <source src={audio} type={props.type} />
+            Your browser does not support the audio element.
+          </audio>
           <Link className="detail__return" to="/">
             <i className="video fa-solid fa-arrow-left-long"></i>
+            Back
           </Link>
 
           <a
@@ -56,9 +57,8 @@ const SceneDetail = (props) => {
               video['360p'] || video['480p'] || video['7200p'] || video['1080p']
             }
           >
-            {' Scene'}
-
             <i className="fa-solid fa-video"></i>
+            {' Scene'}
           </a>
         </div>
       </section>

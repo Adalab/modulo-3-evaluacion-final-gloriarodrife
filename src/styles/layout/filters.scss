@@ -1,7 +1,7 @@
 .filters {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 15px 0 30px 0px;
   justify-content: center;
   align-items: center;
 
@@ -10,7 +10,7 @@
     align-items: center;
     gap: 26px;
   }
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 680px) {
     flex-direction: row;
     gap: 20px;
   }
@@ -28,26 +28,25 @@
     align-items: center;
   }
   &__button {
-    background-color: var(--secondary);
-    color: var(--color-title);
+    background-color: var(--color-text);
+    color: var(--primary--ligth);
     height: 25px;
     border-radius: 4px;
     border: 0;
     cursor: pointer;
 
     &:hover {
-      background-color: var(--secondary--ligth);
+      background-color: var(--color-title);
     }
   }
 }
 
 .movie {
   &__text {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 10px;
     color: var(--color-title);
     font-weight: 600;
-    font-style: italic;
   }
   &__search {
     border-radius: 4px;
@@ -66,11 +65,10 @@
 
 .year {
   &__text {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 10px;
     color: var(--color-title);
     font-weight: 600;
-    font-style: italic;
   }
   &__select {
     border: 0.5px solid rgba(0, 0, 0, 0.3);

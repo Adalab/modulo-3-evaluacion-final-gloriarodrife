@@ -1,12 +1,12 @@
 .header {
   text-align: center;
-  padding: 10px 0;
-  border-bottom: 2px solid var(--primary--dark);
-
+  padding: 20px 0;
+  font-family: 'Lato', sans-serif;
   &__title {
     font-size: 1.44rem;
     font-weight: bold;
     color: var(--color-text);
+    padding: 10px 0;
   }
 }
 @media all and (min-width: 768px) {
