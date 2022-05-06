@@ -7,7 +7,22 @@ const SceneDetail = (props) => {
   }
 
   if (props.loaded && !props.movie) {
-    return <p>The scene you are looking for does not exist</p>;
+    return (
+      <>
+        <section className="message">
+          <p>The scene you are looking for does not exist</p>
+          <p>Suggestions:</p>
+          <ol className="message__suggestions">
+            <li>Make sure that all words are spelled correctly.</li>
+            <li>Try different keywords.</li>
+          </ol>
+          <Link className="message__link" to="/">
+            Main page
+            <i className=" message__link--icon fa-solid fa-house"></i>
+          </Link>
+        </section>
+      </>
+    );
   }
   const { movie, image, phrase, director, audio, video } = props.movie;
   return (
