@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 const handleKey = (event) => {
-  event.key === 'Enter' && event.preventDefault();
+  event.keyCode === 13 && event.preventDefault();
 };
 const FilterMovie = (props) => {
   const handleInput = (event) => {
