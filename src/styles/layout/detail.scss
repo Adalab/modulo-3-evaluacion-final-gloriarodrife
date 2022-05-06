@@ -130,3 +130,10 @@
     font-size: 1.1rem;
   }
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

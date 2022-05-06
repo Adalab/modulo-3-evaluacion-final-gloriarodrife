@@ -1,9 +1,14 @@
 import Scene from './Scene';
 import PropTypes from 'prop-types';
+import Loader from './Loader';
 
 const SceneList = (props) => {
   if (!props.loaded) {
-    return <p>Loading...</p>;
+    return (
+      <div className="loader">
+        <Loader />
+      </div>
+    );
   }
 
   if (props.loaded && props.data.length === 0) {

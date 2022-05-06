@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Loader from './Loader';
 
 const SceneDetail = (props) => {
   if (!props.loaded) {
-    return <p>Loading...</p>;
+    return (
+      <div className="loader">
+        <Loader />
+      </div>
+    );
   }
 
   if (props.loaded && !props.movie) {
@@ -41,9 +46,7 @@ const SceneDetail = (props) => {
           <p className="detail__text--director">Director: {director} </p>
 
           <Link className="detail__return" to="/">
-            <div>
-              <i className="video fa-solid fa-arrow-left-long"></i>
-            </div>
+            <i className="video fa-solid fa-arrow-left-long"></i>
           </Link>
 
           <a
