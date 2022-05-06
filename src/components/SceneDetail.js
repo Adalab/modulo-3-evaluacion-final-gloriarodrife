@@ -24,17 +24,7 @@ const SceneDetail = (props) => {
           <h2 className="detail__title">{movie}</h2>
           <p className="detail__text">{phrase}</p>
           <p className="detail__text--director">Director: {director} </p>
-          <a
-            className="detail__audio"
-            href={audio}
-            target={props.target}
-            rel="noopener noreferrer"
-          >
-            Listen audio
-            <div>
-              <i className="audio fa-solid fa-volume-high"></i>
-            </div>
-          </a>
+
           <Link className="detail__return" to="/">
             <div>
               <i className="video fa-solid fa-arrow-left-long"></i>
