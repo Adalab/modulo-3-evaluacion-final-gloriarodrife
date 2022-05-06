@@ -6,7 +6,7 @@ const Scene = (props) => {
 
   return (
     <>
-      <Link to={`/scene/${id}`} style={{ textDecoration: 'none' }}>
+      <Link className="card__link" to={`/scene/${id}`}>
         <img className="card__img" src={image} alt={`Scene of ${movie}`} />
         <section className="card__info">
           <h2 className="card__title">
