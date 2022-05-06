@@ -23,7 +23,7 @@ const SceneDetail = (props) => {
           </ol>
           <Link className="message__link" to="/">
             Main page
-            <i className=" message__link--icon fa-solid fa-house"></i>
+            <i className="message__link--icon fa-solid fa-house"></i>
           </Link>
         </section>
       </>
