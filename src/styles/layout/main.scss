@@ -4,4 +4,14 @@
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+
+  &__message {
+    position: absolute;
+    top: 150px;
+    margin: auto auto auto 20px;
+    font-size: 1.2rem;
+    line-height: 25px;
+    color: var(--color-title);
+    font-weight: bold;
+  }
 }
