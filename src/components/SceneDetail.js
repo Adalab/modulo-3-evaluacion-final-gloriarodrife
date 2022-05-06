@@ -47,7 +47,7 @@ const SceneDetail = (props) => {
           </audio>
           <Link className="detail__return" to="/">
             <i className="video fa-solid fa-arrow-left-long"></i>
-            Back
+            {' Back'}
           </Link>
 
           <a

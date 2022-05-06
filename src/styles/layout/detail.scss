@@ -1,20 +1,30 @@
 .detail {
-  width: 500px;
-  height: 350px;
+  width: 250px;
+  height: 600px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 16px;
   cursor: pointer;
   border-radius: 12px;
   padding: 25px 20px;
   position: absolute;
-  top: 0px;
   left: 0;
   right: 0;
-  bottom: 0;
   margin: auto;
   background-color: rgba(216, 241, 241, 0.5);
   border: 0.5px solid rgba(0, 0, 0, 0.05);
+
+  justify-items: center;
+
+  @media all and (min-width: 680px) {
+    width: 500px;
+    height: 350px;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    margin: auto;
+  }
   &__visual {
     height: 100%;
     display: flex;
@@ -80,7 +90,6 @@
     display: flex;
     gap: 5px;
     text-decoration: none;
-    align-items: center;
     padding-top: 16px;
 
     &:hover {
@@ -121,6 +130,7 @@
     text-decoration: none;
     color: black;
     color: var(--color-title);
+
     &:hover {
       text-decoration: underline;
     }
