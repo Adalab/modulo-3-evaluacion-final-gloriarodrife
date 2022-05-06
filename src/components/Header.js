@@ -11,7 +11,7 @@ const Header = (props) => {
 };
 
 Header.defaultProps = {
-  title: `Owen Wilson's "wow`,
+  title: `Owen Wilson's "wow"`,
 };
 Header.propTypes = {
   title: PropTypes.string.isRequired,

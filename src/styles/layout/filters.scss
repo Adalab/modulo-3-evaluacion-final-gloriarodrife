@@ -1,9 +1,19 @@
 .filters {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
   padding: 15px;
   justify-content: center;
   align-items: center;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 
 .filter {
@@ -71,10 +81,5 @@
     text-align: right;
     background-color: var(--primary);
     color: var(--color-title);
-  }
-}
-@media all and (min-width: 768px) {
-  .filters {
-    gap: 20px;
   }
 }

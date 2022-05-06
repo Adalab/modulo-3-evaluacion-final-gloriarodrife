@@ -16,12 +16,14 @@ const Filters = (props) => {
           handleFilterMovie={props.handleFilterMovie}
           filterMovie={props.filterMovie}
         />
-        <FilterYear
-          handleFilterYear={props.handleFilterYear}
-          yearSelected={props.yearSelected}
-          years={props.years}
-        />
-        <Reset resetButton={props.resetButton} />
+        <section className="filters__container">
+          <FilterYear
+            handleFilterYear={props.handleFilterYear}
+            yearSelected={props.yearSelected}
+            years={props.years}
+          />
+          <Reset resetButton={props.resetButton} />
+        </section>
       </form>
     </>
   );
