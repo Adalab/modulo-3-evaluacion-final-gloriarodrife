@@ -68,7 +68,6 @@ const SceneDetail = (props) => {
 
 SceneDetail.defaultProps = {
   target: '_blank',
-  type: 'audio/mpeg',
 };
 SceneDetail.propTypes = {
   target: PropTypes.string,

@@ -6,14 +6,11 @@ const Reset = (props) => {
   };
   return (
     <button className="filter__button" onClick={handleClick}>
-      {props.buttonText}
+      Reset
     </button>
   );
 };
 
-Reset.defaultProps = {
-  buttonText: 'Reset',
-};
 Reset.propTypes = {
   resetButton: PropTypes.func,
   handleClick: PropTypes.func,

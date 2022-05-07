@@ -4,15 +4,12 @@ const Header = (props) => {
   return (
     <>
       <header className="header">
-        <h1 className="header__title"> {props.title}</h1>
+        <h1 className="header__title"> Owen Wilson's "wow"</h1>
       </header>
     </>
   );
 };
 
-Header.defaultProps = {
-  title: `Owen Wilson's "wow"`,
-};
 Header.propTypes = {
   title: PropTypes.string.isRequired,
 };

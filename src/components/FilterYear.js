@@ -27,7 +27,7 @@ const FilterYear = (props) => {
     <>
       <section className="filter__year">
         <label htmlFor="year" className="year__text">
-          {props.title}
+          Year
         </label>
         <ul>{renderYears()}</ul>
       </section>
@@ -35,9 +35,6 @@ const FilterYear = (props) => {
   );
 };
 
-FilterYear.defaultProps = {
-  title: 'Year',
-};
 FilterYear.propTypes = {
   title: PropTypes.string.isRequired,
   years: PropTypes.array,
