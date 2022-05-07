@@ -36,7 +36,6 @@ const FilterYear = (props) => {
 };
 
 FilterYear.propTypes = {
-  title: PropTypes.string.isRequired,
   years: PropTypes.array,
   year: PropTypes.number,
   handleFilterYear: PropTypes.func,
