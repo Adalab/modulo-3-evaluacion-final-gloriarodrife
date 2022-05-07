@@ -57,7 +57,7 @@ const SceneDetail = (props) => {
               video['360p'] || video['480p'] || video['7200p'] || video['1080p']
             }
           >
-            <i className="fa-solid fa-video"></i>
+            <i className="fa-solid fa-video video__link"></i>
             {' Scene'}
           </a>
         </div>
