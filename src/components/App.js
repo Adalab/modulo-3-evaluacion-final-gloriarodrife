@@ -9,6 +9,7 @@ import Filters from './Filters';
 import SceneList from './SceneList';
 import SceneDetail from './SceneDetail';
 function App() {
+  // Variables de estado
   const [data, setData] = useState(ls.get('movies', []));
   const [filterMovie, setFilterMovie] = useState('');
   const [yearSelected, setYearSelected] = useState('All');
