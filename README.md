@@ -15,14 +15,8 @@ que abrirá una ventana del navegador y mostrará la página web (como haría el
 
 ## Enunciado
 
-Antes de empezar a realizar el ejercicio, hay que crear un nuevo repositorio desde GitHub Classroom
-usando _este_ enlace. Una vez creado, hay que clonarlo en nuestro ordenador y en la carpeta creada
-empezaremos a trabajar en el ejercicio.
-
 El ejercicio consiste en desarrollar una página web con el listado de las escenas de las películas donde el
 actor Owen Wilson ha dicho 'wow', [API Wow de Owen Wilson](https://owen-wilson-wow-api.herokuapp.com/) es la API que usaremos en este ejercicio.
-
-Vamos a usar React para realizarlo.
 
 ## 1. Listado de escenas
 
@@ -44,8 +38,6 @@ Puedes ingresar a la página oficial del Api en el siguiente enlace https://owen
 Ahora que ya tenemos el listado de escenas, la segunda parte consiste en realizar un filtro para buscar por
 película. Para eso, añadimos un `input` a la interfaz, de forma que al ir escribiendo un nombre queden en la
 interfaz solo las escenas cuya película contiene las letras escritas.
-
-> **Nota**: en principio no es necesario tener en cuenta si las letras están en mayúscula/minúscula para la búsqueda, pero si queréis añadir esta mejora pues genial.
 
 ## 3. Filtrado por año
 
