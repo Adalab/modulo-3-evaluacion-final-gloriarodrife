@@ -96,7 +96,11 @@ function App() {
                   resetButton={ResetButton}
                   years={getYears()}
                 />
-                <SceneList loaded={loaded} data={scenesFilter} />
+                <SceneList
+                  loaded={loaded}
+                  data={scenesFilter}
+                  filterMovie={filterMovie}
+                />
               </>
             }
           />

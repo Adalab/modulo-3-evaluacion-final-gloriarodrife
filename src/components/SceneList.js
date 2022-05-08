@@ -14,7 +14,7 @@ const SceneList = (props) => {
   if (props.loaded && props.data.length === 0) {
     return (
       <div className="list__message">
-        The movie you are looking for does not exist !<p>Suggestions:</p>
+        The search with {props.filterMovie} does not exist !<p>Suggestions:</p>
         <ol className="message__suggestions">
           <li>Make sure that all words are spelled correctly.</li>
           <li>Try different keywords.</li>
