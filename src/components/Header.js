@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import '../styles/layout/header.scss';
 const Header = (props) => {
   return (
