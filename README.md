@@ -11,7 +11,6 @@
 2. Una vez hemos instalado las dependencias, el proyecto se arranca ejecutando:
 
 **npm start**
-que abrirá una ventana del navegador y mostrará la página web (como haría el plugin de VSCode Live Server).
 
 ## Enunciado
 
