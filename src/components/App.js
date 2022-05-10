@@ -8,16 +8,21 @@ import Header from './Header';
 import Filters from './Filters';
 import SceneList from './SceneList';
 import SceneDetail from './SceneDetail';
+import ResultApi from './ResultApi';
+
 function App() {
   // Variables de estado
-  const [data, setData] = useState(ls.get('movies', []));
+  const [data, setData] = useState([]);
   const [filterMovie, setFilterMovie] = useState('');
   const [yearSelected, setYearSelected] = useState('All');
   const [loaded, setLoaded] = useState(false);
-
+  const [inputValue, setInputValue] = useState(50);
+  console.log(inputValue);
   useEffect(() => {
-    if (data.length === 0) {
-      callToApi().then((response) => {
+    console.log(inputValue);
+
+    if (data.length) {
+      callToApi(inputValue).then((response) => {
         setLoaded(true);
         const orderedMovies = sorteAlphabetically(response, 'movie');
         // Añado las peliculas al localStorage
@@ -26,7 +31,7 @@ function App() {
     } else {
       setLoaded(true);
     }
-  }, [data.length]);
+  }, [inputValue]);
 
   useEffect(() => {
     ls.set('movies', data);
@@ -82,7 +87,7 @@ function App() {
   return (
     <>
       <Header />
-
+      <ResultApi setInputValue={setInputValue} inputValue={inputValue} />
       <main className="list__container">
         <Routes>
           <Route

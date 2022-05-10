@@ -1,9 +1,9 @@
 // Fichero src/services/api.js
-const callToApi = async () => {
+const callToApi = async (number) => {
   const URL_API = `https://owen-wilson-wow-api.herokuapp.com`;
 
   // Llamamos a la API
-  const response = await fetch(`${URL_API}/wows/random?results=50`);
+  const response = await fetch(`${URL_API}/wows/random?results=${number}`);
   const data = await response.json();
 
   // Cuando responde la API podemos limpiar los datos aquí
